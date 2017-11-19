@@ -1,0 +1,11 @@
+en:
+  spina:
+    hubspot:
+      primary_navigation:
+        title: Hubspot
+        contacts: Contacts
+        events: Events
+      contacts:
+        title: Contacts
+      events:
+        title: Events

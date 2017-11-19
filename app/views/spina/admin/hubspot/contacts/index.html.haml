@@ -1,0 +1,12 @@
+.well
+  .dd#pages-list
+    %ol.dd-list
+      - @contacts.each do |contact|
+        %li.dd-item
+          .dd-item-inner
+            = link_to admin_hubspot_contact_path(contact.vid), class: 'button button-link button-small sortable-link' do
+              = contact.properties.fetch(:firstname) { 'Unknown' }
+              = contact.properties.fetch(:lastname) { 'Unknown' }
+            - if contact.properties.key?(:lastmodifieddate)
+              %span.pull-right.button.button-link.button-small
+                = DateTime.strptime(contact.properties[:lastmodifieddate], '%Q').to_formatted_s(:short)

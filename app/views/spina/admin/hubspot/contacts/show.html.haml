@@ -1,0 +1,13 @@
+#page_content.tab-content.active.well
+  .horizontal-form
+    .horizontal-form-group
+      .horizontal-form-label
+        Email
+      .horizontal-form-content
+        = @contact.email
+    - @contact.properties.keys.each do |property|
+      .horizontal-form-group
+        .horizontal-form-label
+          = property.to_s.titleize
+        .horizontal-form-content
+          = @contact.properties[property]

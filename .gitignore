@@ -1,0 +1,9 @@
+# OS X
+**.DS_Store
+
+# Dummy rails app in specs...
+spec/dummy/tmp
+spec/dummy/log
+
+# Coverage
+coverage

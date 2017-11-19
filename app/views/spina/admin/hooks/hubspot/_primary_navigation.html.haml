@@ -1,0 +1,11 @@
+%li{class: ('active' if (%w[pages photos attachments navigations] + Spina::Plugin.all.map { |plugin| plugin.namespace if current_theme.plugins.include?(plugin.name) }).include? controller_name)}
+  = link_to spina.admin_pages_path do
+    =image_tag('spina/hubspot/hubspot-sprocket-32.png', class: 'icon')
+    =t('spina.hubspot.primary_navigation.title')
+    =icon('caret-right')
+
+  %ul
+    %li{class: ('active' if current_admin_path.start_with?('/hubspot/contacts') || current_admin_path.start_with?('/navigations'))}
+      = link_to t('spina.hubspot.primary_navigation.contacts'), spina.admin_hubspot_contacts_path
+    %li{class: ('active' if current_admin_path.start_with?('/hubspot/events'))}
+      = link_to t('spina.hubspot.primary_navigation.events'), spina.admin_hubspot_events_path
